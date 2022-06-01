@@ -1,0 +1,132 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+.pro {
+    font-family: 'Quicksand', sans-serif ;
+    margin: auto;
+    width: 1000px;
+    height: 750px;
+    position: relative;
+    
+}
+
+.stroke_prediction {
+    background: rgba(255, 252, 229, 0.801);
+    width: 1050px;
+    height: 425px;
+    position: absolute;
+    top: 25%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+}
+
+.box {
+    position: absolute;
+    top: -10%;
+    left: 5%;
+    background: peachpuff;
+    text-align: center;
+    width: 610px;
+    height: 550px;
+    border-radius: 5px;
+    box-shadow: 2px 0 10px rgba(0,0,0,.1);
+    transition: all .5s ease-in-out;
+    z-index: 2;
+}
+
+.left, .right {
+    position: absolute;
+    width: 100%;
+    transition: 1s all ease;
+}
+
+.left {
+    left:85%;
+    top: 30%;
+}
+
+.right {
+    right: 3%;
+}
+
+h1 {
+    
+    color: gray;
+    font-size: 1.8em;
+    line-height: 1.1em;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 20%;
+}
+p {
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+button {
+    padding: 12px;
+    letter-spacing: 3px;
+    font-size: 11px;
+    border-radius: 20px;
+    margin: auto;
+    outline: none;
+    display: block;
+    background-color: beige;
+
+}
+button:hover {
+    background: pale;
+    color: rgb(165, 165, 165);
+    transition: background-color 1s ease-out;
+}
+.btn-success {
+    margin-top: 3%;
+    background-color: beige;
+    color: coral;
+    border: solid 1.5px coral;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+input {
+    background: none;
+    color: rgb(151, 151, 151);
+    border: none;
+    border-bottom: 1px solid rgba(white, 0.5);
+    padding: 6px;
+    margin: 8px;
+    border-bottom: 1px solid coral;
+    
+}
+label {
+    
+    color: rgb(0, 0, 0);
+    font-size: 1.0em;
+    letter-spacing: 0.5px;
+}
+
+input[type=radio] {
+    width: 8px;
+    background: rgb(255, 255, 255);
+
+}
+res {
+    width: 8px;
+    text-align: center;
+    background-color: beige;
+    font-size: 30px;
+    
+
+}
