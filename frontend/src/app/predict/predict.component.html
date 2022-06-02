@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
 
@@ -12,121 +9,106 @@
     <div class = "stroke_prediction" >
         <div class="box">
             <div class="left">
-                <h1>Stroke Prediction</h1>
-                <p> Please enter your informations in here. </p>
+                <h1>Please enter your informations in here.</h1>
             </div>
             
             <div class="right">
-                <label>Gender</label>
-                <div class="input-group">
-                    <label for="male">
+                <form>
 
-                        <input type="radio" name="gender" value="0" id="male" [(ngModel)]="gender"> Male
-                    </label>
+                    <h2>Gender</h2>
+                    <div class="input-group">
+                        <label for="male">
+                            <input type="radio" name="gender" value="0" id="male" [(ngModel)]="gender"> Male
+                        </label>
+                        <label for="female">
+                            <input type="radio" name="gender" value="1" id="female" [(ngModel)]="gender"> Female
+                        </label>
+                    </div>
                     
-                    <label for="female">
+                    <h2>Age</h2>
+                    <input type="number" name="age" placeholder="From 1 - 100 years old"  [(ngModel)]="age">
                     
-                        <input type="radio" name="gender" value="1" id="female" [(ngModel)]="gender"> Female
-                    </label>
-                </div>
+                    <h2>Hypertension</h2>
+                    <div class="input-group">
+                        <label for="yes">
+                            <input type="radio" name="hypertension" value="1" id="yes" [(ngModel)]="hypertension"> Yes
+                        </label>
+                        <label for="no">
+                            <input type="radio" name="hypertension" value="0" id="no" [(ngModel)]="hypertension"> No
+                        </label>
+                    </div>
+                    
+                    <h2>Heart Disease</h2>
+                    <div class="input-group">
+                        <label for="yes">
+                            <input type="radio" name="heart_disease" value="1" id="yes" [(ngModel)]="heart_disease"> Yes
+                        </label>
+                        <label for="no">
+                            <input type="radio" name="heart_disease" value="0" id="no" [(ngModel)]="heart_disease"> No
+                        </label>
+                    </div>
+                    
+                    <h2>Are You Married?</h2>
+                    <div class="input-group">
+                        <label for="yes">
+                            <input type="radio" name="ever_married" value="1" id="yes" [(ngModel)]="ever_married"> Yes
+                        </label>
+                        <label for="no">
+                            <input type="radio" name="ever_married" value="0" id="no" [(ngModel)]="ever_married"> No
+                        </label>
+                    </div>
+                
+                    <h2>Work Type</h2>
+                    <div class="input-group">
+                        <label for="Private">
+                            <input type="radio" name="work_type" value="0" id="Private" [(ngModel)]="work_type"> Private
+                        </label>
+                        <label for="Self-employed">
+                            <input type="radio" name="work_type" value="1" id="Self-employed" [(ngModel)]="work_type"> Self Employed
+                        </label>
+                        <label for="children">
+                            <input type="radio" name="work_type" value="2" id="children" [(ngModel)]="work_type"> Children
+                        </label>
+                        <label for="Govt_job">
+                            <input type="radio" name="work_type" value="3" id="Govt_job" [(ngModel)]="work_type"> Governement Job
+                        </label>
+                        <label for="Never_worked">
+                            <input type="radio" name="work_type" value="4" id="Never_worked" [(ngModel)]="work_type"> Never Worked
+                        </label>
+                    </div>
+                    
+                    <h2> Glucose Level</h2>
+                    <input type="number" name="avg_glucose_level" placeholder="From: 80 - 300 "  [(ngModel)]="avg_glucose_level">
+                    
+                    <h2>BMI Level</h2>
+                    <input type="number" name="bmi" placeholder="From: 18 - 45"  [(ngModel)]="bmi">
+                    
+                    <h2>Smoking Status</h2>
+                    <div class="input-group">
+                        <label for="never smoked">
+                            <input type="radio" name="smoking_status" value="0" id="never smoked" [(ngModel)]="smoking_status"> Never Smoked
+                        </label>
+                        <label for="formerly smoked">
+                            <input type="radio" name="smoking_status" value="1" id="formerly smoked" [(ngModel)]="smoking_status"> Formerly Smoked
+                        </label>
+                        <label for="smokes">
+                            <input type="radio" name="smoking_status" value="2" id="smokes" [(ngModel)]="smoking_status"> Smokes
+                        </label>
+                        <label for="Unknown">
+                            <input type="radio" name="smoking_status" value="3" id="Unknown" [(ngModel)]="smoking_status"> Unknown
+                        </label>
+                    </div>
+                    
+                    <button class="btn-success" (click)="predict()"> Prediction </button>
+                    <div class="res"> {{result}} </div>
+                </form>
+                
+                
             
-                <label>Age</label>
-                <input type="number" name="age" placeholder="Your Age"  [(ngModel)]="age">
-            
-                <label>Hypertension</label>
-                <div class="input-group1">
-                
-                    <label for="yes">
-                        <input type="radio" name="hypertension" value="1" id="yes" [(ngModel)]="hypertension"> Yes
-                    </label>
-                
-                    <label for="no">
-                        <input type="radio" name="hypertension" value="0" id="no" [(ngModel)]="hypertension"> No
-                    </label>
-                </div>
-            
-                <label>Heart Disease</label>
-                <div class="input-group2">
-                
-                    <label for="yes">
-                        <input type="radio" name="heart_disease" value="1" id="yes" [(ngModel)]="heart_disease"> Yes
-                    </label>
-                
-                    <label for="no">
-                        <input type="radio" name="heart_disease" value="0" id="no" [(ngModel)]="heart_disease"> No
-                    </label>
-                </div>
-                
-                <label>Ever Married</label>
-                <div class="input-group3">
-                    
-                    <label for="yes">
-                        <input type="radio" name="ever_married" value="1" id="yes" [(ngModel)]="ever_married"> Yes
-                    </label>
-                    
-                    <label for="no">
-                        <input type="radio" name="ever_married" value="0" id="no" [(ngModel)]="ever_married"> No
-                    </label>
-                </div>
-                
-                <label>Work Type</label>
-                <div class="input-group4">
-                    
-                    <label for="Private">
-                        <input type="radio" name="work_type" value="0" id="Private" [(ngModel)]="work_type"> Private
-                    </label>
-                    
-                    <label for="Self-employed">
-                        <input type="radio" name="work_type" value="1" id="Self-employed" [(ngModel)]="work_type"> Self Employed
-                    </label>
-
-                    <label for="children">
-                        <input type="radio" name="work_type" value="2" id="children" [(ngModel)]="work_type"> Children
-                    </label>
-                    
-                    <label for="Govt_job">
-                        <input type="radio" name="work_type" value="3" id="Govt_job" [(ngModel)]="work_type"> Governement Job
-                    </label>
-
-                    <label for="Never_worked">
-                        <input type="radio" name="work_type" value="4" id="Never_worked" [(ngModel)]="work_type"> Never Worked
-                    </label>
-                </div>
-                
-                <label>Avg Glucose Level</label>
-                <input type="number" name="avg_glucose_level" placeholder="Ex: 125 "  [(ngModel)]="avg_glucose_level">
-                
-                <label>BMI</label>
-                <input type="number" name="bmi" placeholder="Ex: 31.2"  [(ngModel)]="bmi">
-                
-                <label>Smoking Status</label>
-                <div class="input-group5">
-                    
-                    <label for="never smoked">
-                        <input type="radio" name="smoking_status" value="0" id="never smoked" [(ngModel)]="smoking_status"> Never Smoked
-                    </label>
-                    
-                    <label for="formerly smoked">
-                        <input type="radio" name="smoking_status" value="1" id="formerly smoked" [(ngModel)]="smoking_status"> Formerly Smoked
-                    </label>
-                    
-                    <label for="smokes">
-                        <input type="radio" name="smoking_status" value="2" id="smokes" [(ngModel)]="smoking_status"> Smokes
-                    </label>
-                    
-                    <label for="Unknown">
-                        <input type="radio" name="smoking_status" value="3" id="Unknown" [(ngModel)]="smoking_status"> Unknown
-                    </label>
-                
-                </div>
-                
-                <button class="btn-success" (click)="predict()"> Prediction </button>
-                
-                <div class="res"> {{result}} </div>
-            
+              
             </div>
         </div>
-    
     </div>
+   
 
 </div>

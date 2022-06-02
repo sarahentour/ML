@@ -23,9 +23,9 @@ def predict():
     features = [np.array (dataset['key'])]  
     prediction= model.predict(features)
     if prediction==1:
-        return jsonify ( "Sorry!! the possibility of getting STROKE is high. Please take care of yourself. ")
+        return jsonify ( "Sorry!! the possibility of getting Stroke is high. Please take care of yourself. ")
     else:
-        return jsonify ( "Congratulations!! You are in a good HEALTH.")
+        return jsonify ( "Congratulations!! You are in a good HEALTH. You have no risk of Stroke.")
 
 if __name__=="__main__":
     app.run(debug=False)
